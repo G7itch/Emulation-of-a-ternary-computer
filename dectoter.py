@@ -1,7 +1,9 @@
-def DecToTer(num):  #2
-    quotient = num/3    #3
+#I didnt write this, idk who did but its not my fault if it breaks
+
+def DecToTer(num):
+    quotient = num/3
     remainder = num%3
-    if quotient == 0:   #4
+    if quotient == 0:
         return ""
     else:
         return DecToTer(int(quotient)) + str(int(remainder))

@@ -1,3 +1,5 @@
+#Ternary logic gates
+
 def tnand(x,y):
   x,y = int(x), int(y)
   match x:
