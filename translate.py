@@ -24,20 +24,19 @@ def TtoA():
   
   for entry in datainstructions:
     entry = entry.split(" ")
-    data,instruct = entry[0],entry[1]
-    
-    if data == "001":
-      data = "ADD"
-      instruct = [instruct[i:i+8] for i in range(0, len(instruct), 8)]
-      for i in range(0,len(instruct)):
-        instruct[i] = int(instruct[i],3)
+    data,instruct = entry[1],entry[0]
+    if instruct == "001":
+      instruct = "ADD"
+      data = [data[i:i+8] for i in range(0, len(data), 8)]
+      for i in range(0,len(data)):
+        data[i] = int(data[i],3)
       
-    elif data == "002":
-      data = "SUB"
-      instruct = [instruct[i:i+8] for i in range(0, len(instruct), 8)]
-      for i in range(0,len(instruct)):
-        instruct[i] = int(instruct[i],3)
+    elif instruct == "002":
+      instruct = "SUB"
+      data = [data[i:i+8] for i in range(0, len(data), 8)]
+      for i in range(0,len(data)):
+        data[i] = int(data[i],3)
       
-    print(data,",".join(map(str,instruct)))
+    print(instruct,",".join(map(str,data)))
         
   print("***********************\n")
