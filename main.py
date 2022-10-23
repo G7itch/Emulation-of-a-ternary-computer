@@ -1,5 +1,9 @@
-from runonce import main
-from translate import AtoT, TtoA
+############## IMPORTS##############
+from runonce import main          ##
+from translate import AtoT, TtoA  ##
+####################################
+
+##########################################################
 
 print("Welcome to my ternary code editor, I guess this is basically the equivilant to assembly? idrk im not sure")
 print("---------------------------------------------------------\n")
@@ -18,6 +22,7 @@ def menu():
   elif option == 4:
     addtofile()
   elif option == 5:
+    print("\nExecuted current file\n")
     main()
   else:  
     quit()
@@ -30,7 +35,12 @@ def newfile():
 ##########################################################
 
 def pt():
-  pass
+  print("\n***********************")
+  file = open("DataInstructions.ter")
+  for line in file:
+    line = line.strip("\n")
+    print(line)
+  print("***********************\n")
 
 ##########################################################
 
@@ -39,5 +49,5 @@ def addtofile():
 
 ##########################################################
 ##########################################################  
-
-menu()
+while True:
+  menu()

@@ -5,7 +5,7 @@ def AtoT():
 ###########################################################
   
 def TtoA():
-  print("")
+  print("\n***********************")
   file = open("DataInstructions.ter", "r")
   content = file.readlines()
   temp = []
@@ -33,11 +33,11 @@ def TtoA():
         instruct[i] = int(instruct[i],3)
       
     elif data == "002":
-    data = "SUB"
-    instruct = [instruct[i:i+8] for i in range(0, len(instruct), 8)]
-    for i in range(0,len(instruct)):
-      instruct[i] = int(instruct[i],3)
+      data = "SUB"
+      instruct = [instruct[i:i+8] for i in range(0, len(instruct), 8)]
+      for i in range(0,len(instruct)):
+        instruct[i] = int(instruct[i],3)
       
     print(data,",".join(map(str,instruct)))
         
-  print("")
+  print("***********************\n")
