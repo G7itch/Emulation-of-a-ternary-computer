@@ -5,18 +5,13 @@ def add(one,two,sto):
   content = file.readlines()
   num1 = (content[one].strip("\n"))
   num2 = (content[two].strip("\n"))
-  res = (int(num1,3) + int(num2, 3))
+  res = (int(num1,3) + int(num2, 3)) #Converts from base 3 to base 10
   a = str(DecToTer(res))
-  a = "0"*(8-len(a)) + a
+  a = "0"*(8-len(a)) + a # pads the ternanry number so it has 8 bits
   file.close()
-  if sto >= len(content):
-    file = open("memory.ter", "a")
-    file.write("placeholder\n")
-    file.close()
-  
   file = open("memory.ter", "r")
   content = file.readlines()
-  content[sto] = a + "\n"   
+  content[sto] = a + "\n" 
   file.close()
   
   file = open("memory.ter", "w")
@@ -29,17 +24,14 @@ def sub(one,two,sto):
   num1 = (content[one].strip("\n"))
   num2 = (content[two].strip("\n"))
   res = (int(num1,3) - int(num2, 3))
+  if abs(res) != res:
+    res = 0
   a = str(DecToTer(res))
   a = "0"*(8-len(a)) + a
   file.close()
-  if sto >= len(content):
-    file = open("memory.ter", "a")
-    file.write("placeholder\n")
-    file.close()
-  
   file = open("memory.ter", "r")
   content = file.readlines()
-  content[sto] = a + "\n"   
+  content[sto] = a + "\n" 
   file.close()
   
   file = open("memory.ter", "w")

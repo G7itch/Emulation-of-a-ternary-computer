@@ -38,3 +38,12 @@ def txor(x,y):
     case 2:
       return 2
 
+def tnot(x)
+  x = int(x)
+  match x:
+    case 0:
+      return 2
+    case 1:
+      return 1
+    case 2:
+      return 0

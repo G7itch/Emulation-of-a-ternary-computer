@@ -1,5 +1,5 @@
 ######### IMPORTS #########
-from m import add, sub    #
+from ALU import add,sub    #
 ###########################
 
 #Command list for use in DataInstructions, just to keep track of everything

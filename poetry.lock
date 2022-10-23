@@ -194,6 +194,17 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "mmm"
+version = "0.4.2"
+description = "minimalistic media manager"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+test = ["coverage"]
+
+[[package]]
 name = "multidict"
 version = "6.0.2"
 description = "multidict implementation"
@@ -477,7 +488,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8.0,<3.9"
-content-hash = "4ceda468c6ce7d0b641f0c244f742d3a912100cd87f29fbe250fdc0a2528f740"
+content-hash = "77e83ab0f44c26ec15bf080a93f40220f3aa95416f17d245e4a3140f52eb6c89"
 
 [metadata.files]
 aiohttp = []
@@ -497,6 +508,7 @@ itsdangerous = []
 jedi = []
 jinja2 = []
 markupsafe = []
+mmm = []
 multidict = []
 numpy = []
 packaging = []
