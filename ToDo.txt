@@ -1,0 +1,8 @@
+IN MAIN.PY:
+  1. Finish function definitions
+  
+IN ALU.PY
+  1. Add more operations
+
+IN TRANSLATE.PY:
+  1. Add translation from Assembly to Ternary
