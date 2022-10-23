@@ -1,48 +1,43 @@
-######### IMPORTS #########
-from ALU import add,sub    #
-###########################
+from runonce import main
+from translate import AtoT, TtoA
 
-#Command list for use in DataInstructions, just to keep track of everything
+print("Welcome to my ternary code editor, I guess this is basically the equivilant to assembly? idrk im not sure")
+print("---------------------------------------------------------\n")
 
-commands = {"000": "data",
-            "001": "add",
-            "002": "subtract"
-           }
+##########################################################
 
-###########################################################################
-###########################################################################
-file = open("DataInstructions.ter", "r")
-datainstruct = []
-for count, line in enumerate(file):
-    count += 1
-    line = line.strip("\n")
-    datainstruct.append(line)
+def menu():
+  print("1. New file\n2. Print current file in assembly\n3. Print current file in ternary\n4. Append to end of current file\n5. Run current file\n6. Quit")
+  option = int(input(">> ")) #at some point ill add vaildation here
+  if option == 1:
+    newfile()
+  elif option == 2:
+    TtoA()
+  elif option == 3:
+    pt()
+  elif option == 4:
+    addtofile()
+  elif option == 5:
+    main()
+  else:  
+    quit()
 
-file.close()
-###########################################################################
+##########################################################
 
-cnt = 1 #Dont know what this is or how it is different to "count" but ok
+def newfile():
+  pass
 
-##########################################################################
-#################THE CODE BELOW WAS WRITTEN YONDERS AGO, #################
-#################IDK HOW IT WORKS OR WHAT I WAS THINKING #################
-#################BUT IT WORKS MOST OF THE TIME           #################
-##########################################################################
+##########################################################
 
-for count, ele in enumerate(datainstruct):
-    if cnt % 2 == 1:
-        instruct = ele #Not sure why this is here
-        data = [
-            datainstruct[count + 1][i:i + 8]
-            for i in range(0, len(datainstruct[count + 1]), 8) #splits into 3x ternary byte
-        ]
-        if instruct == "001":
-            one, two, sto = [(int(str(i), 3) - 1) for i in data] #
-            add(one, two, sto)
-        elif instruct == "002":
-            one, two, sto = [(int(str(i), 3) - 1) for i in data]
-            sub(one, two, sto)
+def pt():
+  pass
 
-    else:
-        pass
-    cnt += 1
+##########################################################
+
+def addtofile():
+  pass
+
+##########################################################
+##########################################################  
+
+menu()
