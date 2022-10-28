@@ -12,6 +12,8 @@ def add(one,two,sto):
   num2 = (content[two].strip("\n"))
   
   res = (int(num1,3) + int(num2, 3)) #Converts from base 3 to base 10
+  if res > 6561:
+    res = 6561
   a = str(DecToTer(res))
   a = "0"*(8-len(a)) + a # pads the ternanry number so it has 8 bits
   
