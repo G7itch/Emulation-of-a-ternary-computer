@@ -33,6 +33,16 @@ def AtoTandAppend():
       b = "".join(map(str,data))
       b = b + "\n"
       file.write(b)
+    
+    elif instruct == "SET":
+      file.write("000\n")
+      data = int(data)
+      a = str(DecToTer(data))
+      data = "0"*(8-len(a)) + a
+      b = data + "\n"
+      file.write(b) 
+
+      
   file.close()
   print("***********************")
   print("File appended to succesfully\n")
@@ -73,6 +83,15 @@ def AtoTandWrite():
       b = "".join(map(str,data))
       b = b + "\n"
       file.write(b)
+
+    elif instruct == "SET":
+      file.write("000\n")
+      data = int(data)
+      a = str(DecToTer(data))
+      data = "0"*(8-len(a)) + a
+      b = data + "\n"
+      file.write(b) 
+      
   file.close()
   print("***********************")
   print("File written to succesfully\n") 
@@ -113,6 +132,13 @@ def TtoA():
       data = [data[i:i+8] for i in range(0, len(data), 8)]
       for i in range(0,len(data)):
         data[i] = int(data[i],3)
+
+    elif instruct == "000":
+      instruct = "SET"
+      data = [data[i:i+8] for i in range(0, len(data), 8)]
+      for i in range(0,len(data)):
+        data[i] = int(data[i],3)
+    
     tlist.append(instruct + " " + ",".join(map(str,data)))  
     print(instruct,",".join(map(str,data)))
       

@@ -54,3 +54,13 @@ def sub(one,two,sto):
   file.writelines(content)
   file.close()
 #############################################################
+
+def set(one):
+  file = open("memory.ter", "r")
+  content = file.readlines()
+  content[one] = "00000000\n" 
+  file.close()
+  
+  file = open("memory.ter", "w")
+  file.writelines(content)
+  file.close()

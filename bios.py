@@ -1,5 +1,6 @@
 from translate import TtoA
 from CU import main
+import os
 #############################################################################
 
 def inputascii():
@@ -36,6 +37,7 @@ def memorydump():
   
   file1.close()
   tempfile1.close()
+  os.remove("memory.old")
 
 #############################################################################
 

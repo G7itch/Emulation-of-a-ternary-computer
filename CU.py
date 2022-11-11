@@ -1,10 +1,10 @@
 ######### IMPORTS #########
-from ALU import add,sub    #
+from ALU import add,sub,set#
 ###########################
 
 #Command list for use in DataInstructions, just to keep track of everything
 
-commands = {"000": "data",
+commands = {"000": "set memory location to 0",
             "001": "add",
             "002": "subtract"
            }
@@ -43,6 +43,9 @@ def main():
           elif instruct == "002":
               one, two, sto = [(int(str(i), 3) - 1) for i in data]
               sub(one, two, sto)
+          elif instruct == "000":
+            one = int("".join(map(str,[(int(str(i), 3) - 1) for i in data])))
+            set(one)
   
       else:
           pass
