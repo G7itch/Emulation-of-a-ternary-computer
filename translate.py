@@ -82,6 +82,7 @@ def AtoTandWrite():
 ###########################################################
   
 def TtoA():
+  tlist = []
   print("\n***********************")
   file = open("DataInstructions.ter", "r")
   content = file.readlines()
@@ -112,7 +113,8 @@ def TtoA():
       data = [data[i:i+8] for i in range(0, len(data), 8)]
       for i in range(0,len(data)):
         data[i] = int(data[i],3)
-      
+    tlist.append(instruct + " " + ",".join(map(str,data)))  
     print(instruct,",".join(map(str,data)))
-        
+      
   print("***********************\n")
+  return tlist
